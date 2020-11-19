@@ -17,7 +17,7 @@ export class UsersService {
   }
 
   getAll(): Observable<User[]> {
-    return this.http.get(`http://emphasoft-test-assignment.herokuapp.com/api/v1/users/`, {headers: this.headers})
+    return this.http.get(`https://emphasoft-test-assignment.herokuapp.com/api/v1/users/`, {headers: this.headers})
       .pipe(map((response: []) => {
         return response
       }))

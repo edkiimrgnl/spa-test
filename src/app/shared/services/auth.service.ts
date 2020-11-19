@@ -20,7 +20,7 @@ export class AuthService {
   }
 
   signin(user: User): Observable<any> {
-    return this.http.post('http://emphasoft-test-assignment.herokuapp.com/api-token-auth/', user)
+    return this.http.post('https://emphasoft-test-assignment.herokuapp.com/api-token-auth/', user)
       .pipe(
         tap(this.setToken),
         catchError(this.handleError.bind(this))
