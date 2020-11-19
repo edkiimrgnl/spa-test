@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <div class="content">
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <h2 class="form__header">SignIn</h2>
+
+    <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+      {{ error }}
+    </div>
+
+    <div class="form__control" [ngClass]="{invalid: form.get('username').touched && form.get('username').invalid}">
+      <input class="form__input" type="text" id="username" formControlName="username" placeholder=">юзернейм">
+      <div class="validation" *ngIf="form.get('username').touched && form.get('username').invalid">
+        <small>
+          Введите свой юзернейм
+        </small>
+      </div>
+    </div>
+
+    <div class="form__control" [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}">
+      <input class="form__input" type="password" id="password" formControlName="password" placeholder=">пароль">
+      <div class="validation" *ngIf="form.get('password').touched && form.get('password').invalid">
+        <small>
+          Введите свой пароль
+        </small>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <button
+        type="submit"
+        class="btn form__btn"
+        [disabled]="form.invalid || submitted"
+      >войти</button>
+      <h2 class="form__header point">SignUp?</h2> 
+    </div>
+
+    </form>
+  </div>
+</div>

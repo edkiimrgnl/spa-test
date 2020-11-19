@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "spa-test"
+    }
+  },
+  "defaultProject": "spa-test",
+  "cli": {
+    "analytics": false
+  }
 }

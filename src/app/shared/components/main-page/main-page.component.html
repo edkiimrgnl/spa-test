@@ -1,0 +1,20 @@
+<nav class="navbar main">
+  <h1 class="navbar__header">Test Web SPA</h1>
+  <a
+    [routerLink]="['/login', 'signin']"
+    class="btn navbar__btn"
+    *ngIf="!auth.isAuthenticated(); else user"
+  >login</a>
+
+  <ng-template #user>
+    <div>
+      <a [routerLink]="[ '/', 'home' ]" class="btn navbar__btn">home</a>
+      <a (click)="auth.signout()" [routerLink]="['/', 'login', 'signin']" class="btn navbar__btn">quit</a>
+    </div>
+  </ng-template>
+  
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
